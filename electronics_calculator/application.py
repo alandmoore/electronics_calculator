@@ -18,15 +18,15 @@ class Application(tk.Tk):
         #####################
         self.title('Electronics Calculator')
         self.geometry('640x480')
-        self.configure(bd=20)
+        self.configure(bd=10) # border padding
 
         ###############
         # Style fixes #
         ###############
         self.style = ttk.Style()
-        # use 'alt' theme
-
-        self.style.theme_use('alt')
+        # use 'alt' theme if its available
+        if 'alt' in self.style.theme_names():
+            self.style.theme_use('alt')
 
         # bigger font
         self.default_font = font.nametofont("TkDefaultFont")
